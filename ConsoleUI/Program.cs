@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using ConsoleUI;
+using Microsoft.VisualBasic;
+
 namespace ConsoleUI
 {
     class Program
@@ -33,20 +36,67 @@ namespace ConsoleUI
 
             // Create a list of Vehicle called vehicles
 
+            List<Vehicle> vehicles = new List<Vehicle>();
+
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
              * - new it up as one of each derived class
              * Set the properties with object initializer syntax
              */
 
+            var c1 = new Car()
+            {
+                HasTrunk = true,
+                Year = 2014,
+                Make = "Honda",
+                Model = "Civic EX"
+            };
+            var m1 = new Motorcycle()
+            {
+                HasSideCart = true,
+                Year = 2000,
+                Make = "Honda",
+                Model = "Trail125",
+            };
+
+            Vehicle vehicle1 = new Car()
+            {
+                HasTrunk = false,
+                Year = 1998,
+                Make = "Porsche",
+                Model = "911",
+            };
+
+            Vehicle vehicle2 = new Motorcycle()
+            {
+                HasSideCart = false,
+                Year = 2014,
+                Make = "Mitsubishi",
+                Model = "Eclipse GT",
+            };
+
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate over each of the properties
              */
 
-            // Call each of the drive methods for one car and one motorcycle
+            vehicles.Add(c1);
+            vehicles.Add(m1);
+            vehicles.Add(vehicle1);
+            vehicles.Add(vehicle2);
 
-            #endregion            
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine($"Year: {vehicle.Year}\n" +
+                                  $"Make: {vehicle.Make}\n" +
+                                  $"Model: {vehicle.Model}\n");
+
+                
+            }
+            // Call each of the drive methods for one car and one motorcycle
+            m1.DriveVehicle(m1);
+            c1.DriveVehicle(c1);
+            #endregion
             Console.ReadLine();
         }
     }
