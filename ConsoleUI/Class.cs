@@ -22,6 +22,13 @@ namespace ConsoleUI
     public class Car : Vehicle
     {
         public bool HasTrunk { get; set; } = false;
+        public static int numberOfCars { get; set; } = 0;
+
+        public Car()
+        {
+            numberOfCars++;
+            Console.WriteLine(numberOfCars);
+        }
 
         public override void DriveAbstract(Vehicle vehicle)
         {

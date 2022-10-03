@@ -75,6 +75,30 @@ namespace ConsoleUI
                 Model = "Eclipse GT",
             };
 
+            var c3 = new Car()
+            {
+                HasTrunk = true,
+                Year = 2004,
+                Make = "Ford",
+                Model = "Mustang"
+            };
+
+            var c4 = new Car()
+            {
+                HasTrunk = true,
+                Year = 2023,
+                Make = "Kia",
+                Model = "Stinger"
+            };
+
+            var c5 = new Car()
+            {
+                HasTrunk = true,
+                Year = 2010,
+                Make = "Mini",
+                Model = "Hatch",
+            };
+
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate over each of the properties
